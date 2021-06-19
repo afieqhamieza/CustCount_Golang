@@ -2,9 +2,95 @@
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Counter Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+      .container {
+        /* background-color: brown; */
+      }
+      .card {
+        width: 400px;
+        height: 640px;
+        margin: auto;
+        margin-top: 80px;
+      }
+      /* .button {
+        border: none;
+        color: white;
+        padding: 50px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 30px;
+        margin-inline: 20px;
+        border-radius: 50%;
+        left: -4px;
+      } */
+      .inline {
+        display: inline-block;
+        margin-right: 5px;
+      }
+
+      .button {
+        bottom: 100px;
+        color: #fff;
+        cursor: pointer;
+        position: absolute;
+        background: #2ec4b6;
+        font-size: 40px;
+      }
+      .left {
+        left:0;
+        border-radius: 0 100px 100px 0;
+        padding: 80px 80px 80px 20px;
+      }
+      .right {
+        right: 0;
+        border-radius: 100px 0 0 100px;
+        padding: 80px 20px 80px 80px;
+      }
+    </style>
+  </head>
 
   <body>
-<h1>This is counter</h1>>
+    <div class="container">
+      <div class="card bg-light text-white">
+        <div class="card-body">
+          <!-- contents here -->
+          <!-- <div class="row update-count-button">
+            <div class="col-xs-2">
+              <button type="button" class="btn btn-secondary button inline">
+                +
+              </button>
+            </div>
+            <div class="col-xs-4">
+              <button type="button" class="btn btn-secondary button inline">
+                -
+              </button>
+            </div>
+          </div> -->
+
+          <div class="button left">
+            <div class="triangle-left">+</div>
+          </div>
+          <div class="button right">
+            <div class="triangle-right">-</div>
+          </div>
+
+          <!-- end of contents -->
+        </div>
+      </div>
+    </div>
   </body>
 </html>
 {{ end }}
