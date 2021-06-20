@@ -39,6 +39,16 @@
             },
           });
         });
+
+        $(".settings-icon").on("click", function () {
+          $.ajax({
+            url: "http://localhost:8080/settings",
+            method: "GET",
+            success: function () {
+              window.location = "http://localhost:8080/settings";
+            },
+          });
+        });
       });
     </script>
 
@@ -55,22 +65,38 @@
         padding: 0%;
       }
       .card-header {
-        display: flex;
-        align-items: center;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
       }
       .app-name {
         color: #22333b;
+        text-align: center;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font-weight: lighter;
       }
       .settings-icon {
-        color: #22333b;
+        color: #0F8B8D;
+        text-align: right;
+        font-size: 20px;
+
+        background-color: Transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+      }
+      .settings-icon:focus{
+        outline: none;
       }
       .storeName-div {
-        color: #c32f27;
+        color: #780116;
         font-size: 20px;
         font-weight: bolder;
         text-align: center;
-        padding-top: 30%;
+        padding-top: 10%;
         text-transform: uppercase;
+        letter-spacing: 2px;
       }
       .count-div {
         color: #22333b;
@@ -80,34 +106,36 @@
         /* padding: 70px 0; */
       }
       .limit-div {
-        color: #c32f27;
+        color: #FFB703;
         font-size: 12px;
         font-weight: bold;
         text-align: center;
-        /* background-color: #db7e2670; */
+        background-color: #ffb8032a;
         padding: 10px;
         border-radius: 10px;
       }
       .button {
-        bottom: 5%;
-        color: #fff;
+        bottom: 3%;
+        color: #242537;
         cursor: pointer;
         position: absolute;
-        background: #780116;
-        font-size: 40px;
+        background: #adb5bd;
+        font-size: 50px;
+        border: none;
       }
-      .button:focus{
+      .button:focus {
         outline: none;
       }
       .left {
         left: 0;
-        border-radius: 0 100px 100px 0;
-        padding: 80px 80px 80px 20px;
+        border-radius: 0 250px 250px 0;
+        padding: 130px 130px 130px 10px;
       }
       .right {
         right: 0;
-        border-radius: 100px 0 0 100px;
-        padding: 80px 20px 80px 80px;
+        border-radius: 250px 0 0 250px;
+        padding: 130px 10px 130px 130px;
+        
       }
     </style>
   </head>
@@ -116,9 +144,18 @@
     <div class="container">
       <div class="card text-white">
         <div class="card-header">
-          <div class="app-name">CustCount</div>
-          <div class="settings-icon">
-            <i class="fa fa-cog"></i>
+          <div class="row">
+            <div class="col"></div>
+            <div class="col-6">
+              <div class="app-name">CustCount</div>
+            </div>
+            <div class="col">
+              <div class="settings-icon">
+                <button class="settings-icon">
+                  <i class="fa fa-cog"></i>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
         <div class="card-body">
