@@ -10,43 +10,63 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <style>
       .container {
-        /* background-color: brown; */
+        background-color: #e8e8e8;
       }
       .card {
         width: 400px;
         height: 640px;
         margin: auto;
         margin-top: 80px;
+        background-color: #fff;
+        padding: 0%;
       }
-      /* .button {
-        border: none;
-        color: white;
-        padding: 50px;
+      .card-header {
+        display: flex;
+  align-items: center;
+      }
+      .app-name {
+        color: #22333b;
+      }
+      .settings-icon {
+        color: #22333b;
+      }
+      .storeName-div {
+        color:#C32F27;
+        font-size: 20px;
+        font-weight: bolder;
         text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 30px;
-        margin-inline: 20px;
-        border-radius: 50%;
-        left: -4px;
-      } */
-      .inline {
-        display: inline-block;
-        margin-right: 5px;
+        padding-top: 30%;
+        text-transform: uppercase;
       }
-
+      .count-div {
+        color: #22333b;
+        font-size: 100px;
+        font-weight: bold;
+        text-align: center;
+        /* padding: 70px 0; */
+      }
+      .limit-div {
+        color: #C32F27;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        /* background-color: #db7e2670; */
+        padding: 10px;
+        border-radius: 10px;
+      }
       .button {
-        bottom: 100px;
+        bottom: 5%;
         color: #fff;
         cursor: pointer;
         position: absolute;
-        background: #2ec4b6;
+        background: #780116;
         font-size: 40px;
       }
       .left {
@@ -64,21 +84,31 @@
 
   <body>
     <div class="container">
-      <div class="card bg-light text-white">
+      <div class="card text-white">
+        <div class="card-header">
+          <div class="app-name">
+            CustCount
+          </div>
+          <div class="settings-icon">
+            <i class="fa fa-cog"></i>
+          </div>
+        </div>
         <div class="card-body">
+
           <!-- contents here -->
-          <!-- <div class="row update-count-button">
-            <div class="col-xs-2">
-              <button type="button" class="btn btn-secondary button inline">
-                +
-              </button>
-            </div>
-            <div class="col-xs-4">
-              <button type="button" class="btn btn-secondary button inline">
-                -
-              </button>
-            </div>
-          </div> -->
+          <div class="storeName-div">
+            {{.storeName}}
+          </div>
+
+          <div class="limit-div">
+            Store Capacity: {{.capacity}} 
+          </div>
+
+          <div class="count-div">
+            {{.count}}
+          </div>
+
+          
 
           <div class="button left">
             <div class="triangle-left">+</div>
