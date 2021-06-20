@@ -25,7 +25,7 @@
             url: "http://localhost:8080/startApp",
             type: "post",
             dataType: "html",
-            data: { storeName: "hello", capacity: "3" },
+            data: { storeName: $('#storename').val(), capacity: $('#storecapacity').val() },
             success: function () {
               window.location = "http://localhost:8080/counter";
             },
