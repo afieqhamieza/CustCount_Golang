@@ -54,7 +54,7 @@
 
     <style>
       .container {
-        background-color: #e8e8e8;
+        background-color: #ffffff;
       }
       .card {
         width: 400px;
@@ -63,6 +63,7 @@
         margin-top: 80px;
         background-color: #fff;
         padding: 0%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
       .card-header {
         box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
@@ -120,7 +121,7 @@
         color: #242537;
         cursor: pointer;
         position: absolute;
-        background: #adb5bd;
+        background: #e2e2e2;
         font-size: 50px;
         border: none;
       }
@@ -145,19 +146,7 @@
     <div class="container">
       <div class="card text-white">
         <div class="card-header">
-          <div class="row">
-            <div class="col"></div>
-            <div class="col-6">
-              <div class="app-name">CustCount</div>
-            </div>
-            <div class="col">
-              <div class="settings-icon">
-                <button class="settings-icon">
-                  <i class="fa fa-cog"></i>
-                </button>
-              </div>
-            </div>
-          </div>
+          {{ template "navbar"}}
         </div>
         <div class="card-body">
           <!-- contents here -->
