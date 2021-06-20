@@ -63,20 +63,30 @@
         margin-top: 80px;
         background-color: #fff;
         padding: 0%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      a:hover,
+      a:visited,
+      a:link,
+      a:active {
+        color: #22333b;
+
+        text-decoration: none;
       }
       .card-header {
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
       }
       .app-name {
         color: #22333b;
         text-align: center;
-        letter-spacing: 5px;
+        letter-spacing: 7px;
         text-transform: uppercase;
         font-weight: lighter;
+        font-size: 20px;
       }
       .settings-icon {
-        color: #0F8B8D;
+        color: #0f8b8d;
         text-align: right;
         font-size: 20px;
 
@@ -87,7 +97,7 @@
         overflow: hidden;
         outline: none;
       }
-      .settings-icon:focus{
+      .settings-icon:focus {
         outline: none;
       }
       .storeName-div {
@@ -107,7 +117,7 @@
         /* padding: 70px 0; */
       }
       .limit-div {
-        color: #FFB703;
+        color: #ffb703;
         font-size: 12px;
         font-weight: bold;
         text-align: center;
@@ -137,7 +147,6 @@
         right: 0;
         border-radius: 250px 0 0 250px;
         padding: 130px 10px 130px 130px;
-        
       }
     </style>
   </head>
@@ -145,9 +154,7 @@
   <body>
     <div class="container">
       <div class="card text-white">
-        <div class="card-header">
-          {{ template "navbar"}}
-        </div>
+        <div class="card-header">{{ template "navbar"}}</div>
         <div class="card-body">
           <!-- contents here -->
           <div class="storeName-div">{{.storeName}}</div>
