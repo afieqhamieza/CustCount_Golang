@@ -5,6 +5,7 @@ import (
 	"net/http"
 	// "fmt"
 	// "html/template"
+	"strconv"
 	"github.com/thedevsaddam/renderer"
 )
 
@@ -37,9 +38,20 @@ func main() {
 	mux.HandleFunc("/settings", settings)
 	mux.HandleFunc("/addCount", addCount)
 	mux.HandleFunc("/minusCount", minusCount)
+	mux.HandleFunc("/startApp", startApp)
 	port := ":8080"
 	log.Println("Listening on port ", port)
 	http.ListenAndServe(port, mux)
+}
+
+func startApp(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "POST" {
+		info.storeName = r.FormValue("storeName")
+		k, _ := strconv.Atoi(r.FormValue("capacity"))
+		info.capacity = k
+		// fmt.Println("Receive ajax post data string ", ajax_post_data)
+		// w.Write([]byte("<h2>after<h2>"))
+	}
 }
 
 func addCount(w http.ResponseWriter, r *http.Request) {

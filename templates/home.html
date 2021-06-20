@@ -2,9 +2,108 @@
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Home Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#buttonClicked").click(function () {
+          $.ajax({
+            url: "http://localhost:8080/startApp",
+            type: "post",
+            dataType: "html",
+            data: { storeName: "hello", capacity: "3" },
+            success: function () {
+              window.location = "http://localhost:8080/counter";
+            },
+          });
+        });
+      });
+    </script>
+    `
+
+    <style>
+      .container {
+        background-color: #e8e8e8;
+      }
+      .card {
+        width: 400px;
+        height: 640px;
+        margin: auto;
+        margin-top: 80px;
+        background-color: #fff;
+        padding: 0%;
+      }
+      .card-header {
+        display: flex;
+        align-items: center;
+      }
+      .card-body {
+        align-items: center;
+      }
+      .app-name {
+        color: #22333b;
+      }
+      .settings-icon {
+        color: #22333b;
+      }
+      label {
+        color: #22333b;
+      }
+    </style>
+  </head>
 
   <body>
-<h1>This is home</h1>
+    <div class="container">
+      <div class="card text-white">
+        <div class="card-header">
+          <div class="app-name">CustCount</div>
+          <div class="settings-icon">
+            <i class="fa fa-cog"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <!-- contents here -->
+          <div class="form-group">
+            <label>Store Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="storename"
+              name="storename"
+            />
+          </div>
+          <div class="form-group">
+            <label>Store Capacity:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="storecapacity"
+              name="storecapacity"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="buttonClicked">
+            Start Count
+          </button>
+
+          <!-- end of contents -->
+        </div>
+      </div>
+    </div>
   </body>
 </html>
 {{ end }}
