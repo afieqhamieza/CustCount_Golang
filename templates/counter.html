@@ -10,10 +10,37 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#addClicked").on("click", function () {
+          $.ajax({
+            url: "http://localhost:8080/addCount",
+            method: "GET",
+            success: function () {
+              location.reload();
+            },
+          });
+        });
+
+        $("#minusClicked").on("click", function () {
+          $.ajax({
+            url: "http://localhost:8080/minusCount",
+            method: "GET",
+            success: function () {
+              location.reload();
+            },
+          });
+        });
+      });
+    </script>
 
     <style>
       .container {
@@ -29,7 +56,7 @@
       }
       .card-header {
         display: flex;
-  align-items: center;
+        align-items: center;
       }
       .app-name {
         color: #22333b;
@@ -38,7 +65,7 @@
         color: #22333b;
       }
       .storeName-div {
-        color:#C32F27;
+        color: #c32f27;
         font-size: 20px;
         font-weight: bolder;
         text-align: center;
@@ -53,7 +80,7 @@
         /* padding: 70px 0; */
       }
       .limit-div {
-        color: #C32F27;
+        color: #c32f27;
         font-size: 12px;
         font-weight: bold;
         text-align: center;
@@ -70,7 +97,7 @@
         font-size: 40px;
       }
       .left {
-        left:0;
+        left: 0;
         border-radius: 0 100px 100px 0;
         padding: 80px 80px 80px 20px;
       }
@@ -86,36 +113,25 @@
     <div class="container">
       <div class="card text-white">
         <div class="card-header">
-          <div class="app-name">
-            CustCount
-          </div>
+          <div class="app-name">CustCount</div>
           <div class="settings-icon">
             <i class="fa fa-cog"></i>
           </div>
         </div>
         <div class="card-body">
-
           <!-- contents here -->
-          <div class="storeName-div">
-            {{.storeName}}
-          </div>
+          <div class="storeName-div">{{.storeName}}</div>
 
-          <div class="limit-div">
-            Store Capacity: {{.capacity}} 
-          </div>
+          <div class="limit-div">Store Capacity: {{.capacity}}</div>
 
-          <div class="count-div">
-            {{.count}}
-          </div>
+          <div class="count-div">{{.count}}</div>
 
-          
-
-          <div class="button left">
+          <button class="button left" id="addClicked">
             <div class="triangle-left">+</div>
-          </div>
-          <div class="button right">
+          </button>
+          <button class="button right" id="minusClicked">
             <div class="triangle-right">-</div>
-          </div>
+          </button>
 
           <!-- end of contents -->
         </div>

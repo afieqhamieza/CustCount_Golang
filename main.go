@@ -35,9 +35,19 @@ func main() {
 	mux.HandleFunc("/", home)
 	mux.HandleFunc("/counter", counter)
 	mux.HandleFunc("/settings", settings)
+	mux.HandleFunc("/addCount", addCount)
+	mux.HandleFunc("/minusCount", minusCount)
 	port := ":8080"
 	log.Println("Listening on port ", port)
 	http.ListenAndServe(port, mux)
+}
+
+func addCount(w http.ResponseWriter, r *http.Request) {
+	info.count++
+}
+
+func minusCount(w http.ResponseWriter, r *http.Request) {
+	info.count--
 }
 
 func home(w http.ResponseWriter, r *http.Request) {
